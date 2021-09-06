@@ -6,9 +6,9 @@ workers_dev = true
 route = ""
 zone_id = ""
 
-# [env.production]
-# # The ID of the domain to deploying to
-# zone_id = "$yourZoneId"
+[env.production]
+# The ID of the domain to deploying to
+zone_id = ""
 
 # # The route pattern your Workers application will be served at
 # route = "example.com/*"

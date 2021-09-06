@@ -1,5 +1,10 @@
 import type { Weather } from "./types/Weather";
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "*",
+};
+
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
@@ -15,7 +20,7 @@ async function handleRequest(request: Request): Promise<Response> {
     const error = { status: "error", error: "`query` is a required field." };
 
     return new Response(JSON.stringify(error), {
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
       status: 400,
     });
   }
@@ -32,11 +37,11 @@ async function handleRequest(request: Request): Promise<Response> {
     .catch(() => null)) as Weather | null;
 
   const data = {
-    data: res,
     powered_by: "https://openweathermap.com/api",
+    data: res,
   };
 
   return new Response(JSON.stringify(data), {
-    headers: { "content-type": "application/json" },
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
 }
