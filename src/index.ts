@@ -42,6 +42,11 @@ async function handleRequest(request: Request): Promise<Response> {
   };
 
   return new Response(JSON.stringify(data), {
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    headers: {
+      "Content-Type": "application/json",
+      // cache results for 1 hour
+      "Cache-Control": "public, max-age=3600",
+      ...CORS_HEADERS,
+    },
   });
 }
