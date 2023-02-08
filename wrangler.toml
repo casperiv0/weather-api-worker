@@ -1,3 +1,7 @@
 name = "weather-api-worker"
-compatibility_date = "2022-05-14"
+compatibility_date = "2023-02-08"
 main = "src/index.ts"
+
+[vars]
+
+OPEN_WEATHER_MAP_API_KEY = "4d41ff2de0c4e6fc9f3d163bde0c7b59"

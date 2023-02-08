@@ -6,7 +6,7 @@ const CORS_HEADERS = {
 };
 
 addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
+  (event as any).respondWith(handleRequest((event as any).request));
 });
 
 async function handleRequest(request: Request): Promise<Response> {

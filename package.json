@@ -5,6 +5,7 @@
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,css,json}\" --ignore-path .gitignore",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
+    "typecheck": "tsc --noEmit",
     "dev": "wrangler dev"
   },
   "author": {
@@ -13,11 +14,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@casper124578/eslint-config": "^4.3.0",
+    "@casper124578/eslint-config": "^6.0.0",
     "@cloudflare/workers-types": "^3.10.0",
-    "eslint": "^8.15.0",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4",
-    "wrangler": "^2.0.5"
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5",
+    "wrangler": "^2.9.1"
   }
 }
